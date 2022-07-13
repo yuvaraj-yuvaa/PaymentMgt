@@ -1,0 +1,24 @@
+<form>
+    <div class="row">
+        <h2 class="addpadding">Add Payment</h2> 
+        <div class="setmargin">
+            <div class="form-group" class="col-md-4">
+                <label for="name">Name</label>
+                <input type="name" class="form-control" name="userName" [(ngModel)]="userDetails.usrName">
+            </div>
+            <div class="form-group" class="col-md-4">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" name="price" [(ngModel)]="userDetails.priceDetail">
+            </div>
+            <div class="form-group" class="col-md-4">
+                <label for="carno">Card No</label>
+                <input type="number" class="form-control" name="carno" [(ngModel)]="userDetails.cardNum">
+            </div>
+        </div>      
+        <div class="addpadding">          
+            <button class="btn btn-primary" [disabled]="userDetails.usrName.length == 0 || userDetails.priceDetail.length == 0 || userDetails.cardNum.length == 0" (click)="addPaymentDetails()">Add Payment</button>&nbsp;
+            <button class="btn btn-danger" [disabled]="userDetails.usrName.length == 0 && userDetails.priceDetail.length == 0 && userDetails.cardNum.length == 0" (click)="onClear()">Clear</button>
+        </div>   
+    </div>    
+</form>
+
